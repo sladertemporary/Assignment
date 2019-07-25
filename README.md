@@ -1,12 +1,12 @@
 # Assignment
 
 To do list:
-- API fetch endpoint
-- Adjust DB commit method to use real parameters
+- API fetch endpoint (60%)
+- Adjust DB commit method to use real parameters 
 - Validation, model parameters
 - Docker container config (redis, flask, rq, sqlalchemy, sqlite)
 - Tests
-- Documentation & Comments
+- Documentation (70%)
 
 ## Documentation
 
