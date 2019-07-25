@@ -18,6 +18,7 @@ Tasks currently outstanding:
 - Validation, insert actual parameters into db, code commenting
 - API endpoint for fetching
 - Tests
+- Error catching
 
 ### Requirements
 
