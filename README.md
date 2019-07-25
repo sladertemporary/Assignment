@@ -66,7 +66,11 @@ Partial data is allowed.
 **Code** : `400 BAD REQUEST`
 
 
-
-
 ## Deployment proposition
+
+For production, **uWSGI** and **NGINX** should be used to serve the flask application. If the expected load on the application requires a cluster setup to meet load demand, the application should also be configured to use an external database and redis server. 
+
+**It is highly recommended that this application should be secured with authentication and throttled to avoid abuse of the API.**
+
+Following the suggested changes for production, the docker container can be deployed onto AWS as an ECS service with a load balancer attached. An RDS database (e.g. using MySQL) can be used.
 
