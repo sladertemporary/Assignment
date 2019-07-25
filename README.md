@@ -5,12 +5,12 @@ A simple event collection API allowing both the submission and fetching of event
 The application itself has the following requirement(s):
 
 - API must be able to deal with Geolocation API limitations 
-- Average response time from your API should be around ~200ms or less
+- Average response time from API should be around ~200ms or less
 
  The external API has the following limitations:
 
 - API can handle only 5 requests per second
-- our API likes to have a "hiccup" and returning a response may take even up to 5 seconds
+- Geolocation API likes to have a "hiccup" and returning a response may take even up to 5 seconds
 
 ## Documentation
 
