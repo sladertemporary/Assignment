@@ -12,6 +12,13 @@ The application itself has the following requirement(s):
 - API can handle only 5 requests per second
 - Geolocation API likes to have a "hiccup" and returning a response may take even up to 5 seconds
 
+Tasks currently outstanding:
+
+- Docker container setup
+- Validation & insert actual parameters into db
+- API endpoint for fetching
+- Tests
+
 ## Documentation
 
 ### Event Store
