@@ -4,12 +4,17 @@ import json
 import redis
 from datetime import datetime
 from rq import Queue, Connection
+from database import db_session
 from task import *
 
 app = Flask(__name__)
 
 REDIS_URL = 'redis://localhost:6379'
 REDIS_QUEUES = ['default']
+
+@app.teardown_appcontext
+def shutdown_session(exception=None):
+    db_session.remove()
 
 @app.route('/event/submit/', methods = ['POST'])
 def user():
@@ -34,23 +39,34 @@ def user():
 
 @app.route('/event/fetch/', methods = ['GET'])
 def fetch():
-	datemin = request.args.get('datefrom')
-	datestart = request.args.get('dateto')
-
-	city_name = request.args.get('city_name')
-	country_name = request.args.get('country_name')
-	iso_code = request.args.get('iso_code')
-
 	session = sessionmaker()
 	session.configure(bind=engine)
-	Base.metadata.create_all(engine)
 
 	query = session()
 
-	results = query.query(Event).filter_by(source_ip = '127.0.0.1').all()
+	datefrom = request.args.get('datefrom')
+	dateto = request.args.get('dateto')
 
-	print (results[0].name)
-	return(results[0].name)
+	if request.args.get('city'):
+		results = query.query(Geolocation).filter(Geolocation.city==request.args.get('city'))
+		return(results[0].city)
+
+	if request.args.get('country_name'):
+		results = query.query(Geolocation).filter(Geolocation.city==request.args.get('country_name'))
+		return(results[0].city)
+
+	if request.args.get('country_iso'):
+		results = query.query(Geolocation).filter(Geolocation.city==request.args.get('country_iso'))
+		return(results[0].city)
+
+	if datefrom is not None and dateto is not None:
+		if results:
+			results = results.filter()
+		else:
+			results = query.query(Geolocation).filter(Geolocation.city==request.args.get('city'))
+			return(results[0].city)
+
+	return jsonify(isError= True, message= "No valid parameters!", statusCode=400,data=request.data)
 
 if __name__ == '__main__':
     app.run(debug=True)
