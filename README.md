@@ -76,5 +76,5 @@ For production, **uWSGI** and **NGINX** should be used to serve the flask applic
 
 **It is highly recommended that this application should be secured with authentication and throttled to avoid abuse of the API. Logging must also be used to monitor application health.**
 
-Following the suggested changes for production, the docker container can be deployed onto AWS as an ECS service with a load balancer attached. An RDS database (e.g. using MySQL) can be used.
+Following the suggested changes for production, the **docker** container can be deployed onto AWS as an ECS service with a load balancer attached. An RDS database (e.g. using MySQL) can be used.
 
