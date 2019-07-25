@@ -1,6 +1,6 @@
 # Assignment (incomplete)
 
-A simple event collection API allowing both the submission and fetching of events. Events are located using the source IP address of the event submission by calling an external Geolocation API.
+A simple event collection API allowing both the submission and fetching of events. Events are located using the source IP address of the event submission by calling an external Geolocation API (pulled from docker hub workivate/geoip-api).
 
 The application itself has the following requirement(s):
 
