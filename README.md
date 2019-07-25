@@ -15,7 +15,7 @@ The application itself has the following requirement(s):
 Tasks currently outstanding:
 
 - Docker container setup
-- Validation & insert actual parameters into db
+- Validation, insert actual parameters into db, code commenting
 - API endpoint for fetching
 - Tests
 
