@@ -79,7 +79,7 @@ Partial data is allowed.
 
 ## Deployment proposition
 
-For production, **uWSGI** and **NGINX** should be used to serve the flask application. If the expected load on the application requires a cluster setup to meet load demand, the application should also be configured to use an external database and redis server. 
+For production, **uWSGI** and **NGINX** should be used to serve the flask application. The application should be setup using a **docker** container for portability. If the expected load on the application requires a cluster setup to meet load demand, the application should also be configured to use an external database and redis server. 
 
 **It is highly recommended that this application should be secured with authentication and throttled to avoid abuse of the API. Logging must also be used to monitor application health.**
 
