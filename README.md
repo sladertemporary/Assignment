@@ -19,6 +19,10 @@ Tasks currently outstanding:
 - API endpoint for fetching
 - Tests
 
+### Requirements
+
+flask, redis, sqlalchemy, redis queue, docker
+
 ## Documentation
 
 ### Event Store
