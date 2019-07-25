@@ -1,12 +1,16 @@
-# Assignment
+# Assignment (incomplete)
 
-To do list:
-- API fetch endpoint (60%)
-- Adjust DB commit method to use real parameters 
-- Validation, model parameters
-- Docker container config (redis, flask, rq, sqlalchemy, sqlite)
-- Tests
-- Documentation (70%)
+A simple event collection API allowing both the submission and fetching of events. Events are located using the source IP address of the event submission by calling an external Geolocation API.
+
+The application itself has the following requirement(s):
+
+- API must be able to deal with Geolocation API limitations 
+- Average response time from your API should be around ~200ms or less
+
+ The external API has the following limitations:
+
+- API can handle only 5 requests per second
+- our API likes to have a "hiccup" and returning a response may take even up to 5 seconds
 
 ## Documentation
 
@@ -70,7 +74,7 @@ Partial data is allowed.
 
 For production, **uWSGI** and **NGINX** should be used to serve the flask application. If the expected load on the application requires a cluster setup to meet load demand, the application should also be configured to use an external database and redis server. 
 
-**It is highly recommended that this application should be secured with authentication and throttled to avoid abuse of the API.**
+**It is highly recommended that this application should be secured with authentication and throttled to avoid abuse of the API. Logging must also be used to monitor application health.**
 
 Following the suggested changes for production, the docker container can be deployed onto AWS as an ECS service with a load balancer attached. An RDS database (e.g. using MySQL) can be used.
 
