@@ -1,0 +1,25 @@
+// Flask
+
+// Limitations of Geolocation API
+5 requests per second
+Responses cannot be greater than 200ms(!)
+
+Docker setup
+docker pull workivate/geoip-api
+
+docker run -p 127.0.0.1:8080:8080/tcp workivate/geoip-api
+
+
+request:
+   curl "http://localhost:8080/info?ip=128.101.101.101"
+
+example response:
+{
+"city": "Minneapolis", 
+"country": {
+    "iso_code": "US",
+	"name": "United States" },
+"location": {
+"accuracy_radius": 20, "latitude": 45.04, "longitude": -93.4865, "metro_code": 613, "time_zone": "America/Chicago"
+} 
+}
