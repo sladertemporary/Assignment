@@ -52,18 +52,18 @@ def fetch():
 		return(results[0].city)
 
 	if request.args.get('country_name'):
-		results = query.query(Geolocation).filter(Geolocation.city==request.args.get('country_name'))
+		results = query.query(Geolocation).filter(Geolocation.country_name==request.args.get('country_name'))
 		return(results[0].city)
 
 	if request.args.get('country_iso'):
-		results = query.query(Geolocation).filter(Geolocation.city==request.args.get('country_iso'))
+		results = query.query(Geolocation).filter(Geolocation.country_iso==request.args.get('country_iso'))
 		return(results[0].city)
 
 	if datefrom is not None and dateto is not None:
 		if results:
 			results = results.filter()
 		else:
-			results = query.query(Geolocation).filter(Geolocation.city==request.args.get('city'))
+			results = query.query(Geolocation).filter()
 			return(results[0].city)
 
 	return jsonify(isError= True, message= "No valid parameters!", statusCode=400,data=request.data)
