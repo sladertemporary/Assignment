@@ -6,4 +6,4 @@ To do list:
 - Validation, model parameters
 - Docker container config (redis, flask, rq, sqlalchemy, sqlite)
 - Tests
-- Documentation
+- Documentation & Comments
