@@ -37,8 +37,8 @@ Store an event with geolocation acquired from Geolocation API
 
 ```json
 {
-    "name": "[1 to 30 chars]",
-    "status_code": "[1 to 30 chars]"
+    "name": "[1 to 120 chars]",
+    "status_code": "[integer]"
 }
 ```
 
