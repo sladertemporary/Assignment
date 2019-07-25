@@ -2,7 +2,7 @@
 
 // Limitations of Geolocation API
 5 requests per second
-Responses cannot be greater than 200ms(!)
+Responses have have an average of 200ms(!)
 
 Docker setup
 docker pull workivate/geoip-api
