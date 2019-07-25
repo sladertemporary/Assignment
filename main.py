@@ -47,10 +47,10 @@ def fetch():
 
 	query = session()
 
-	account = query.query(Event).filter_by(source_ip = '127.0.0.1').all()
+	results = query.query(Event).filter_by(source_ip = '127.0.0.1').all()
 
-	print (account[0].name)
-	return(account[0].name)
+	print (results[0].name)
+	return(results[0].name)
 
 if __name__ == '__main__':
     app.run(debug=True)
