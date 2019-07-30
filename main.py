@@ -5,6 +5,7 @@ import redis
 from datetime import datetime
 from rq import Queue, Connection
 from database import db_session
+from sqlalchemy.orm import sessionmaker
 from task import *
 
 app = Flask(__name__)
